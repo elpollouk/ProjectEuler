@@ -76,6 +76,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Problems_001-050\P001-Multiples3and3.cs" />
+    <Compile Include="Problems_001-050\P002-EvenFibonacci.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
