@@ -24,7 +24,7 @@ namespace CSharp.Problems_001_050
         int LargestPalindromicPrime(int range)
         {
             var highest = 0;
-            var highestJ = 0; // Once the inner loop drops below this value, we'll never be avle to get a higher value than highest
+            var highestJ = 0; // Once the inner loop drops below this value, we'll never be able to get a higher value than highest
 
             for (var i = range; i > highestJ; i--)
                 for (var j = range; j > highestJ; j--)
