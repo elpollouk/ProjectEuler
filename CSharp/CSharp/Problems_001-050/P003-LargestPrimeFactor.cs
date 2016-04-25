@@ -6,23 +6,14 @@ namespace CSharp.Problems_001_050
 {
     public class P003_LargestPrimeFactor
     {
-        // Store all the primes we've found so far so we're not always recalulating the same values (dynamic programming I guess?)
-        HashSet<long> primes = new HashSet<long>();
-        long highestPrime = 2;
-
         bool IsPrime(long value)
         {
             if (value == 1 || value == 2) return true;
-            if (primes.Contains(value)) return true;
-            if (value < highestPrime) return false; // We know we've already checked all the values below highest prime and if it's not in the set, then it's not a prime
-
+            
             for (var i = 2; i * i <= value; i++)
             {
                 if (value % i == 0) return false;
             }
-
-            primes.Add(value);
-            highestPrime = value;
 
             return true;
         }
