@@ -9,21 +9,22 @@ namespace CSharp.Problems_001_050
     {
         int Total(int valueLimit)
         {
-            var selection = false;
             var a = 1;
             var b = 1;
+            var c = 2;
             var sum = 0;
 
-            while (a < valueLimit && b < valueLimit)
+            while (c < valueLimit)
             {
-                var current = a + b;
-                if (current % 2 == 0)
-                    sum += current;
+                sum += c;
 
-                if (selection = !selection)
-                    a = current;
-                else
-                    b = current;
+                // Taking advantage of the fact every third number is even as:
+                // Odd + Odd = Even
+                // Odd + Even = Odd
+                // Even + Odd = Odd
+                a = b + c;
+                b = a + c;
+                c = a + b;
             }
 
             return sum;
