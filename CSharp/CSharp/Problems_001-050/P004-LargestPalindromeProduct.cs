@@ -13,12 +13,16 @@ namespace CSharp.Problems_001_050
             // Single digit numbers are alway palindromic
             if (value < 10) return true;
 
-            // Convert to a string and do character comparisons
-            var s = $"{value}";
-            for (var i = 0; i < s.Length / 2; i++)
-                if (s[i] != s[s.Length - (i + 1)]) return false;
+            var v = value;
+            int r = 0;
+            while (v != 0)
+            {
+                var c = v % 10;
+                r = (r * 10) + c;
+                v /= 10;
+            }
 
-            return true;
+            return r == value;
         }
 
         int LargestPalindromicPrime(int range)
