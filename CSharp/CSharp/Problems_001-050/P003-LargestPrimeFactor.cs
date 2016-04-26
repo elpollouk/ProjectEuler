@@ -27,7 +27,7 @@ namespace CSharp.Problems_001_050
         }
 
         [Theory]
-        [InlineData(1, true)]
+        [InlineData(1, false)]
         [InlineData(2, true)]
         [InlineData(3, true)]
         [InlineData(4, false)]
@@ -49,7 +49,6 @@ namespace CSharp.Problems_001_050
         public void Example() => LargestPrimeFactor(13195).Should().Be(29);
 
         [Theory]
-        [InlineData(1, 1)]
         [InlineData(2, 2)]
         [InlineData(3, 3)]
         [InlineData(4, 2)]

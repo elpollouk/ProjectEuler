@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using CSharp.Utils;
+using FluentAssertions;
 using Xunit;
 
 namespace CSharp.Problems_001_050
@@ -7,11 +8,8 @@ namespace CSharp.Problems_001_050
     {
         int Calc(int range)
         {
-            var sumRange = range * (range + 1);
-            sumRange /= 2;
-
-            var sumSquare = range * (2 * range + 1) * (range + 1);
-            sumSquare /= 6;
+            var sumRange = Maths.SumNaturalNumbers(range);
+            var sumSquare = Maths.SumNaturalSquare(range);
 
             return (sumRange * sumRange) - sumSquare;
         }
