@@ -80,6 +80,7 @@
     <Compile Include="Problems_001-050\P003-LargestPrimeFactor.cs" />
     <Compile Include="Problems_001-050\P004-LargestPalindromeProduct.cs" />
     <Compile Include="Problems_001-050\P005-SmallestMultiple.cs" />
+    <Compile Include="Problems_001-050\P006-SumSquareDifference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
