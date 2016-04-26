@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using CSharp.Utils;
+using FluentAssertions;
 using System.Collections.Generic;
 using Xunit;
 
@@ -6,27 +7,15 @@ namespace CSharp.Problems_001_050
 {
     public class P003_LargestPrimeFactor
     {
-        bool IsPrime(long value)
-        {
-            if (value == 1 || value == 2) return true;
-            
-            for (var i = 2; i * i <= value; i++)
-            {
-                if (value % i == 0) return false;
-            }
-
-            return true;
-        }
-
         long LargestPrimeFactor(long value)
         {
-            while (!IsPrime(value))
+            while (!Maths.IsPrime(value))
             {
                 // Special case for 2
                 if (value % 2 == 0) value /= 2;
                 else for (int i = 3; i < (value / 2); i += 2) // We know that no other even number is going to be a prime factor, so why even bother checking them?
                 {
-                    if (IsPrime(i) && value % i == 0)
+                    if (Maths.IsPrime(i) && value % i == 0)
                     {
                         value /= i;
                         break;
@@ -54,7 +43,7 @@ namespace CSharp.Problems_001_050
         [InlineData(14, false)]
         [InlineData(15, false)]
         [InlineData(23, true)]
-        public void Primes(long value, bool expected) => IsPrime(value).Should().Be(expected);
+        public void Primes(long value, bool expected) => Maths.IsPrime(value).Should().Be(expected);
 
         [Fact]
         public void Example() => LargestPrimeFactor(13195).Should().Be(29);
