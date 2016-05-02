@@ -32,5 +32,16 @@
             range /= 6;
             return range;
         }
+
+        public static int Max(int value, params int[] values)
+        {
+            var highest = value;
+
+            foreach (var v in values)
+                if (highest < v)
+                    highest = v;
+
+            return highest;
+        }
     }
 }

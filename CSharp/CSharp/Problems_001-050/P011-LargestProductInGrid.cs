@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using CSharp.Utils;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,14 +88,11 @@ namespace CSharp.Problems_001_050
             for (var i = 0; i < grid.GetLength(0); i++)
                 for (var j = 0; j < grid.GetLength(1); j++)
                 {
-                    var current = Product(grid, i, j, 1, 0);
-                    if (current > higestProduct) higestProduct = current;
-                    current = Product(grid, i, j, 0, 1);
-                    if (current > higestProduct) higestProduct = current;
-                    current = Product(grid, i, j, 1, 1);
-                    if (current > higestProduct) higestProduct = current;
-                    current = Product(grid, i, j, -1, 1);
-                    if (current > higestProduct) higestProduct = current;
+                    var a = Product(grid, i, j, 1, 0);
+                    var b = Product(grid, i, j, 0, 1);
+                    var c = Product(grid, i, j, 1, 1);
+                    var d = Product(grid, i, j, -1, 1);
+                    higestProduct = Maths.Max(higestProduct, a, b, c, d);
                 }
 
             return higestProduct;
