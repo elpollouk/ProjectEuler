@@ -26,6 +26,13 @@
             return range;
         }
 
+        public static long SumNaturalNumbers(long range)
+        {
+            range = range * (range + 1);
+            range /= 2;
+            return range;
+        }
+
         public static int SumNaturalSquare(int range)
         {
             range = range * (range + 1) * (2 * range + 1);

@@ -27,6 +27,9 @@ namespace CSharp.Problems_001_050
         public void Example() => TripletProduct(12).Should().Be(60);
 
         [Fact]
+        public void Check() => TripletProduct(5).Should().Be(0);
+
+        [Fact]
         public void Solution() => TripletProduct(1000).Should().Be(31875000);
     }
 }
