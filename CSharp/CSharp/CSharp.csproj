@@ -85,6 +85,7 @@
     <Compile Include="Problems_001-050\P008-LargestProductInSeries.cs" />
     <Compile Include="Problems_001-050\P009-SpecialPythagoreanTriplet.cs" />
     <Compile Include="Problems_001-050\P010-SumationOfPrimes.cs" />
+    <Compile Include="Problems_001-050\P011-LargestProductInGrid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Maths.cs" />
   </ItemGroup>
