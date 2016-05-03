@@ -10,7 +10,7 @@ namespace CSharp.Problems_001_050
         int Total(int range)
         {
             var total = 0;
-            while (--range > 0)
+            while (--range > 2)
             {
                 if ((range % 3) == 0 || (range % 5) == 0)
                 {
