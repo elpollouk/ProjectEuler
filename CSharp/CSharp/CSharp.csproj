@@ -90,6 +90,7 @@
     <Compile Include="Problems_001-050\P012-HighlyDivisibleTriangularNumber.cs" />
     <Compile Include="Problems_001-050\P013-LargeSum.cs" />
     <Compile Include="Problems_001-050\P014-LongestCollatzSequence.cs" />
+    <Compile Include="Problems_001-050\P015-LatticePaths.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Maths.cs" />
   </ItemGroup>
