@@ -7,23 +7,23 @@ namespace CSharp.Problems_001_050
     {
         long NumPaths(int gridSize)
         {
-            long[,] grid = new long[gridSize, gridSize];
-
+            // We use this as a calculation buffer with the final answer ending up in the last cell
+            long[] grid = new long[gridSize];
 
             // Prime the first column
             for (var i = 0; i < gridSize; i++)
-                grid[i, 0] = i + 2;
+                grid[i] = i + 2;
 
             for (var i = 1; i < gridSize; i++)
             {
-                // The i,i position is always double the cell next to it
-                grid[i, i] = grid[i - 1, i] * 2;
+                // The i,i position is always double the previous calculation
+                grid[i] = grid[i] * 2;
                 for (var j = i + 1; j < gridSize; j++)
-                    grid[i, j] = grid[i - 1, j] + grid[i, j - 1];
+                    grid[j] = grid[j] + grid[j - 1];
             }
 
-            // THe last corner cell with contain the value we want
-            return grid[gridSize-1, gridSize-1];
+            // The last cell contains the value we want
+            return grid[gridSize-1];
         }
 
         [Theory]
