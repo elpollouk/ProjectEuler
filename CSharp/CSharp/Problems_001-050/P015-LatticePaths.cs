@@ -1,9 +1,4 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace CSharp.Problems_001_050
@@ -15,16 +10,19 @@ namespace CSharp.Problems_001_050
             long[,] grid = new long[gridSize, gridSize];
 
 
+            // Prime the first column
             for (var i = 0; i < gridSize; i++)
-            {
                 grid[i, 0] = i + 2;
-                grid[0, i] = i + 2;
-            }
 
             for (var i = 1; i < gridSize; i++)
-                for (var j = 1; j < gridSize; j++)
+            {
+                // The i,i position is always double the cell next to it
+                grid[i, i] = grid[i - 1, i] * 2;
+                for (var j = i + 1; j < gridSize; j++)
                     grid[i, j] = grid[i - 1, j] + grid[i, j - 1];
+            }
 
+            // THe last corner cell with contain the value we want
             return grid[gridSize-1, gridSize-1];
         }
 
