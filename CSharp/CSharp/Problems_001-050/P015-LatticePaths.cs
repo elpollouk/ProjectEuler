@@ -32,6 +32,7 @@ namespace CSharp.Problems_001_050
         [InlineData(3, 20)]
         [InlineData(4, 70)]
         [InlineData(5, 252)]
+        [InlineData(6, 924)]
         public void Example(int gridSize, long numPaths) => NumPaths(gridSize).Should().Be(numPaths);
 
         [Fact]
