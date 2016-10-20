@@ -92,6 +92,7 @@
     <Compile Include="Problems_001-050\P014-LongestCollatzSequence.cs" />
     <Compile Include="Problems_001-050\P015-LatticePaths.cs" />
     <Compile Include="Problems_001-050\P016-PowerDigitSum.cs" />
+    <Compile Include="Problems_001-050\P017-NumberLetterCounts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Maths.cs" />
   </ItemGroup>
