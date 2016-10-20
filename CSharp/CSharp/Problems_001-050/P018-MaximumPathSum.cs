@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using CSharp.Utils;
+using FluentAssertions;
 using Xunit;
 
 namespace CSharp.Problems_001_050
@@ -19,14 +20,13 @@ namespace CSharp.Problems_001_050
                 currentRow[0] += previousRow[0];
                 currentRow[row] += previousRow[row - 1];
 
-                max = (currentRow[0] < currentRow[row]) ? currentRow[row] : currentRow[0];
+                max = Maths.Max(currentRow[0], currentRow[row]);
 
                 // Inner values
                 for (var i = 1; i < currentRow.Length - 1; i++)
                 {
-                    var maxFeeder = (previousRow[i - 1] < previousRow[i]) ? previousRow[i] : previousRow[i - 1];
-                    currentRow[i] += maxFeeder;
-                    if (max < currentRow[i]) max = currentRow[i];
+                    currentRow[i] += Maths.Max(previousRow[i - 1], previousRow[i]);
+                    max = Maths.Max(currentRow[i], max);
                 }
             }
 
