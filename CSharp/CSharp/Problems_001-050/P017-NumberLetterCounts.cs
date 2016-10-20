@@ -1,5 +1,4 @@
-﻿using CSharp.Utils;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace CSharp.Problems_001_050
@@ -51,22 +50,18 @@ namespace CSharp.Problems_001_050
             return 0;
         }
 
-        private static int HundredsLetterCount(int number)
-        {
-            var count = UnitsLetterCount(number);
-            count += (count != 0) ? "hundred".Length : 0;
-            return count;
-        }
-
         private static int LetterCount(int number)
         {
             if (number == 1000) return "onethousand".Length;
 
-            var count = 0;
             var hundreds = number / 100;
             number %= 100;
-            count += HundredsLetterCount(hundreds);
-            count += (count != 0 && number != 0) ? "and".Length : 0;
+            var count = UnitsLetterCount(hundreds);
+            if (count != 0)
+            {
+                count += "hundred".Length;
+                count += (number != 0) ? "and".Length : 0;
+            }
 
             var tens = number / 10;
             if (tens == 1)

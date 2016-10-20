@@ -1,6 +1,5 @@
 ﻿using CSharp.Utils;
 using FluentAssertions;
-using System.Collections.Generic;
 using Xunit;
 
 namespace CSharp.Problems_001_050
