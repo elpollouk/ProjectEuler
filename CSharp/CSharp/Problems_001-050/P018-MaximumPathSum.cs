@@ -10,27 +10,11 @@ namespace CSharp.Problems_001_050
 
         private static long MaxPathSum(params int[][] rows)
         {
-            var max = 0;
-            for (var row = 1; row < rows.Length; row++)
-            {
-                var previousRow = rows[row - 1];
-                var currentRow = rows[row];
+            for (var row = rows.Length - 2; row >= 0; row--)
+                for (var i = 0; i < rows[row].Length; i++)
+                    rows[row][i] += Maths.Max(rows[row + 1][i], rows[row + 1][i + 1]);
 
-                // Edge values
-                currentRow[0] += previousRow[0];
-                currentRow[row] += previousRow[row - 1];
-
-                max = Maths.Max(currentRow[0], currentRow[row]);
-
-                // Inner values
-                for (var i = 1; i < currentRow.Length - 1; i++)
-                {
-                    currentRow[i] += Maths.Max(previousRow[i - 1], previousRow[i]);
-                    max = Maths.Max(currentRow[i], max);
-                }
-            }
-
-            return max;
+            return rows[0][0];
         }
 
         [Fact]
